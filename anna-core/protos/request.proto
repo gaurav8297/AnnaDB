@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+enum RequestType {
+  RT_UNSPECIFIED = 0;
+  GET = 1;
+  PUT = 2;
+}
+
+enum LatticeType {
+  NONE = 0;
+  LWW = 1;
+}
+
+message KeyTuple {
+  string key = 1;
+  LatticeType lattice_type = 2;
+  bytes payload = 4;
+}
+
+message KeyRequest {
+  RequestType type = 1;
+  repeated KeyTuple tuples = 2;
+  string request_id = 3;
+  string response_address = 4;
+}
+
+/// Seed node will respond with all the addresses
+message SeedResponse {
+  repeated Server servers = 1;
+}
+
+message Server {
+  string public_ip = 1;
+  string private_ip = 2;
+}

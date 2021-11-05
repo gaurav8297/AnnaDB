@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "anna-core",
+    "anna-client"
+]
