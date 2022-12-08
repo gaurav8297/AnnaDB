@@ -11,7 +11,7 @@ Rewrite of the research project, Anna, in Rust with better fault tolerance for m
 ## Why Rust?
 
 - Memory safety
-- No runtime that's why really fast
+- No runtime
 - No gc so memory can be optimized
 - Best in class compiler which makes it easy to maintain and few errors
 - Cons: Slow for development because of same compiler
